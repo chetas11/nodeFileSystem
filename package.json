@@ -1,0 +1,14 @@
+{
+  "name": "filesystem",
+  "version": "1.0.0",
+  "description": "node file system",
+  "main": "node index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Chetan Birmole",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
