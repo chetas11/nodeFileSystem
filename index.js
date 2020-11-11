@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const fs  = require("fs");
+const path  = require("path")
+
+
 
 const FileContent = Math.floor(Date.now() / 1000) // to store current time-stamp
 
@@ -10,8 +13,8 @@ let FileName = current_datetime.getFullYear() + "-" + (current_datetime.getMonth
 
     app
     .get("/", (req,res) =>{                                     
-            fs.appendFile(FileName+".txt", FileContent,()=>{       //create a new file and appends the time-stamp
+            fs.writeFile(path.join("D:",FileName+".txt"), FileContent,()=>{       //create a new file and appends the time-stamp
                 console.log("File Created!")
                 res.send(`<h1>File Created</h1>`)
             })
-    }).listen(process.env.PORT) 
+    }).listen(8000) 
